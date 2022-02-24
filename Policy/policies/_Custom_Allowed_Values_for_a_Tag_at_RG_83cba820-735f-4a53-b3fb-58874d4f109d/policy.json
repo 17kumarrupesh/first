@@ -1,0 +1,64 @@
+{
+ "properties": {
+  "displayName": "[Custom]Allowed Values for a Tag at RG",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Enforces for selecting a value for Tag at RG from a defined Array",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "b0a7b031-5a73-461f-9124-c61dcdefeaa3",
+   "createdOn": "2022-02-09T18:09:40.4241485Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "effect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect",
+     "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+     "Audit",
+     "Deny",
+     "Disabled"
+    ],
+    "defaultValue": "Deny"
+   },
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "listOfAllowedTagValues": {
+    "type": "Array",
+    "metadata": {
+     "displayName": "Allowed Tag Values",
+     "description": "An array of allowed tag values, such as 'prod;uat;dev'"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notin": "[parameters('listOfAllowedTagValues')]"
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effect')]"
+   }
+  }
+ },
+ "id": "/subscriptions/be2a657f-bb29-4ed5-9fdc-95acb5e5a773/providers/Microsoft.Authorization/policyDefinitions/83cba820-735f-4a53-b3fb-58874d4f109d",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "83cba820-735f-4a53-b3fb-58874d4f109d"
+}
