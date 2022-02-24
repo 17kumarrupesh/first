@@ -1,0 +1,26 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Tagging Governance v2.0",
+  "policyDefinitionId": "/subscriptions/be2a657f-bb29-4ed5-9fdc-95acb5e5a773/providers/Microsoft.Authorization/policySetDefinitions/f4a18e6d18fa4fc0ae09d437",
+  "scope": "/subscriptions/be2a657f-bb29-4ed5-9fdc-95acb5e5a773",
+  "notScopes": [],
+  "parameters": {},
+  "description": "",
+  "metadata": {
+   "assignedBy": "Rupesh Kumar",
+   "parameterScopes": {},
+   "createdBy": "b0a7b031-5a73-461f-9124-c61dcdefeaa3",
+   "createdOn": "2022-02-15T17:04:38.938858Z",
+   "updatedBy": "b0a7b031-5a73-461f-9124-c61dcdefeaa3",
+   "updatedOn": "2022-02-18T18:04:31.8561052Z"
+  },
+  "enforcementMode": "DoNotEnforce"
+ },
+ "id": "/subscriptions/be2a657f-bb29-4ed5-9fdc-95acb5e5a773/providers/Microsoft.Authorization/policyAssignments/b98afdd057d14098b15e4109",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "b98afdd057d14098b15e4109"
+}
